@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@drawable/bg_flashcard">
+
+    <ImageView
+        android:id="@+id/imgDocIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/ic_book_svg"
+        android:layout_gravity="center_vertical"
+        app:tint="#D31717" />
+
+    <TextView
+        android:id="@+id/tvFileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical"
+        android:textColor="#000"/>
+</LinearLayout>

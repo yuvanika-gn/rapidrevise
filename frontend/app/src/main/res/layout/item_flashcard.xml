@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/cardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/tvLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QUESTION"
+            android:textColor="#7A7A7A"
+            android:textSize="14sp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/tvFlashcardContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is Newton's Second Law?"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/tvTapHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap to reveal answer"
+            android:textColor="#BDBDBD"
+            android:textSize="13sp"
+            android:layout_marginTop="25dp"/>
+    </LinearLayout>
+
+</FrameLayout>

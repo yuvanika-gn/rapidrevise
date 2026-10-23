@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    tools:context=".LibraryActivity"
+    android:background="#F5F6F8">
+
+    <!-- Scrollable Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Top Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvLibraryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Library Search"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+
+        </RelativeLayout>
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Search materials..."
+            android:paddingStart="45dp"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_search"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_search_svg"
+            android:drawablePadding="10dp"/>
+
+        <!-- Filter Chips -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chipAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="All"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:background="@drawable/bg_chip_active"
+                    android:textColor="@android:color/white"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/chipPDF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_chip"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:text="PDFs" />
+
+                <TextView
+                    android:id="@+id/chipNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Notes"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/white"
+                    android:paddingHorizontal="20dp"
+                    android:background="@drawable/bg_chip"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:id="@+id/chipRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Recent"
+                    android:textColor="@color/black"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:background="@drawable/bg_chip"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- RecyclerView (Backend Ready) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerLibrary"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:nestedScrollingEnabled="false"/>
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+
+        android:background="@drawable/floating_nav_bg"
+        android:elevation="10dp"
+
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+
+        app:itemIconSize="24dp"
+        app:itemGravity="center"
+
+        app:itemRippleColor="@android:color/transparent"
+        app:itemActiveIndicatorStyle="@null"/>
+
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".FlashcardsActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F7F9">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_back_circle"
+            android:padding="8dp"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flashcards"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+    <!-- Card Counter -->
+    <TextView
+        android:id="@+id/tvCardCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1/5"
+        android:textSize="14sp"
+        android:layout_below="@id/headerLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+
+    <!-- ViewPager (Backend Data) -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerFlashcards"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@id/tvCardCount"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+
+    <!-- Bottom Controls -->
+    <LinearLayout
+        android:id="@+id/controlLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewPagerFlashcards"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/btnPrevious"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_back_circle"
+            android:padding="18dp"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="#444"/>
+
+        <ImageView
+            android:id="@+id/btnRestart"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_back_circle"
+            android:padding="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_restart"
+            app:tint="#444"/>
+
+        <ImageView
+            android:id="@+id/btnShuffle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_back_circle"
+            android:padding="18dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_shuffle"
+            app:tint="#444"/>
+
+        <ImageView
+            android:id="@+id/btnNext"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_circle_green"
+            android:padding="18dp"
+            android:src="@drawable/ic_right_arrow"
+            app:tint="@android:color/white"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="#00897B"
+        android:visibility="gone"/>
+
+    <!-- Indicators -->
+    <LinearLayout
+        android:id="@+id/indicatorLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/controlLayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

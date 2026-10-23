@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F6F8"
+    android:id="@+id/main"
+    tools:context=".SubjectsActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Subjects"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:textColor="@color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSubjects"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView"
+        android:padding="10dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/bottomNav"
+        android:layout_margin="20dp"
+        android:contentDescription="Add Subject"
+        app:srcCompat="@drawable/ic_plus_svg"
+        app:backgroundTint="#00897B"
+        app:tint="@android:color/white"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+
+        android:background="@drawable/floating_nav_bg"
+        android:elevation="10dp"
+
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+
+        app:itemIconSize="24dp"
+        app:itemGravity="center"
+
+        app:itemRippleColor="@android:color/transparent"
+        app:itemActiveIndicatorStyle="@null"/>
+
+</RelativeLayout>
+

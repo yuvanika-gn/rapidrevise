@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="15dp"
+    android:padding="16dp"
+    android:id="@+id/main"
+    tools:context=".ItemLibraryActivity"
+    android:background="@drawable/bg_stat_card">
+
+    <ImageView
+        android:id="@+id/iconFile"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/bg_file_icon"
+        android:padding="10dp"
+        android:src="@drawable/ic_book_svg"
+        app:tint="#E53935"/>
+
+    <LinearLayout
+        android:layout_toEndOf="@id/iconFile"
+        android:layout_marginStart="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvFileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantum Mechanics Notes.pdf"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvFileDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Physics • 2.4 MB • 2 days ago"
+            android:textColor="#7A7A7A"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

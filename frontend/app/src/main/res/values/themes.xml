@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RapidRevise" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- 🔥 Main Brand Color -->
+        <item name="colorPrimary">@color/primaryGreen</item>
+
+        <!-- 🔥 Status Bar (TOP BAR) -->
+        <item name="android:statusBarColor">@color/primaryGreen</item>
+
+        <!-- 🔥 Navigation Bar (BOTTOM SYSTEM BAR) -->
+        <item name="android:navigationBarColor">@color/primaryGreen</item>
+
+        <!-- 🔥 White icons (battery, time) -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.RapidRevise" parent="Base.Theme.RapidRevise" />
+    <style name="Theme.RapidRevise.NoActionBar" parent="Theme.RapidRevise" />
+    <style name="Theme.RapidRevise.Light" parent="Theme.RapidRevise" />
+
+</resources>

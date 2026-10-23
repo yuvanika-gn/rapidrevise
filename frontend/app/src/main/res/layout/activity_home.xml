@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    tools:context=".HomeActivity"
+    android:background="#F5F6F8">
+
+    <!-- Scroll Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Greeting -->
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Good Morning"
+                android:textSize="16sp"
+                android:textColor="#7A7A7A"/>
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alex Johnson"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Quick Revision Card -->
+            <RelativeLayout
+                android:id="@+id/cardQuickRevision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_quick_card"
+                android:padding="20dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:elevation="6dp">
+
+                <!-- CONTENT -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical">
+
+                    <!-- TEXT -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="QUICK REVISION"
+                            android:textColor="#B2DFDB"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvStartStudy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Start Studying Now"
+                            android:textColor="#FFFFFF"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Set your time and get AI summaries"
+                            android:textColor="#E0F2F1"
+                            android:textSize="14sp" />
+
+                        <!-- 🔥 CTA BUTTON -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_button_light"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="6dp"
+                            android:text="Click here to start now"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- IMAGE -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/carbon_alarm"
+                        app:tint="@android:color/white" />
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+            <!-- Stats Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="20dp">
+
+                <!-- Subjects -->
+                <LinearLayout
+                    android:id="@+id/cardSubjects"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_card"
+                    android:layout_marginEnd="8dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_book_svg"
+                        app:tint="#00897B" />
+
+                    <TextView
+                        android:id="@+id/tvSubjectsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subjects"
+                        android:textSize="13sp"
+                        android:textColor="#7A7A7A"/>
+                </LinearLayout>
+
+                <!-- Documents -->
+                <LinearLayout
+                    android:id="@+id/cardDocuments"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_card"
+                    android:layout_marginEnd="8dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_pdf_svg"
+                        app:tint="#00897B"/>
+
+                    <TextView
+                        android:id="@+id/tvDocumentsCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Documents"
+                        android:textSize="13sp"
+                        android:textColor="#7A7A7A"/>
+                </LinearLayout>
+
+                <!-- Hours -->
+                <LinearLayout
+                    android:id="@+id/cardHours"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_stat_card">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_image_svg"
+                        app:tint="#00897B"/>
+
+                    <TextView
+                        android:id="@+id/tvHoursCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Images"
+                        android:textSize="13sp"
+                        android:textColor="#7A7A7A"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Your Subjects Header -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Subjects"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvSeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See All"
+                    android:textColor="#00897B"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+
+
+            <!-- RecyclerView for backend dynamic subjects -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerSubjects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/bottomNav"
+        android:layout_margin="20dp"
+        android:contentDescription="Add Subject"
+        app:srcCompat="@drawable/ic_plus_svg"
+        app:backgroundTint="#00897B"
+        app:tint="@android:color/white"/>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+
+        android:background="@drawable/floating_nav_bg"
+        android:elevation="10dp"
+
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+
+        app:itemIconSize="24dp"
+        app:itemGravity="center"
+
+        app:itemRippleColor="@android:color/transparent"
+        app:itemActiveIndicatorStyle="@null"/>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardKeyPoint"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_card"
+    android:padding="18dp"
+    android:layout_marginBottom="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Newton's First Law"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <!-- Star -->
+    <ImageView
+        android:id="@+id/btnStar"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_star"
+        app:tint="#F9A825"/>
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tvKeyPoint"
+        android:layout_below="@id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="An object at rest stays at rest unless acted upon..."
+        android:textSize="14sp"
+        android:textColor="#555555"
+        android:layout_marginTop="10dp"/>
+</RelativeLayout>

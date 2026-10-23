@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    tools:context=".RevisionSessionActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F7F9">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_back_circle"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_back_arrow"
+                    app:tint="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Revision Session"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+
+            <!-- AI SUMMARY CARD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_stat_card"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:layout_marginBottom="25dp">
+
+                <!-- Title Row -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_ai_svg"
+                        app:tint="#00897B"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  AI Summary"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  Generated"
+                        android:textSize="12sp"
+                        android:textColor="#00897B"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Content -->
+                <TextView
+                    android:id="@+id/tvAiSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Focus on Newton's Laws and Wave Optics — these are your weakest areas based on your study history. Key formulas to remember: F=ma, λ=h/p, and Snell's law."
+                    android:textSize="14sp"
+                    android:textColor="#444444"
+                    android:visibility="gone"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+
+            <!-- Study Materials Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Study Materials"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Key Concepts -->
+            <include
+                android:id="@+id/keyconceptsSection"
+                layout="@layout/revision_item_key_concepts"/>
+
+            <!-- Formulas -->
+            <include
+                android:id="@+id/formulasSection"
+                layout="@layout/revision_item_formulas"/>
+
+            <!-- Flashcards -->
+            <include
+                android:id="@+id/flashcardsSection"
+                layout="@layout/revision_item_flashcards"/>
+
+            <include
+                android:id="@+id/quizSection"
+                layout="@layout/revision_item_quiz"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+
+        android:background="@drawable/floating_nav_bg"
+        android:elevation="10dp"
+
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+
+        app:itemIconSize="24dp"
+        app:itemGravity="center"
+
+        app:itemRippleColor="@android:color/transparent"
+        app:itemActiveIndicatorStyle="@null"/>
+
+
+
+</RelativeLayout>

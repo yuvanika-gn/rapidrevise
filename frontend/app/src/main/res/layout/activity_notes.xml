@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    tools:context=".NotesActivity"
+    android:background="#F6F7F9">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/bg_back_circle"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back_arrow"
+                    app:tint="#000000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notes"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
+                    android:layout_marginStart="15dp"/>
+            </LinearLayout>
+
+            <!-- Title Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="6dp"/>
+
+            <!-- Title Input Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_card"
+                android:padding="16dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:elevation="4dp">
+
+                <EditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter note title"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:textColorHint="#A0A0A0"
+                    android:background="@android:color/transparent"
+                    android:inputType="textCapSentences"
+                    android:maxLength="60"/>
+            </LinearLayout>
+
+            <!-- Content Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Content"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="6dp"/>
+
+            <!-- Notes Content Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/bg_white_card"
+                android:padding="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:elevation="4dp">
+
+                <EditText
+                    android:id="@+id/etNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Write your notes here..."
+                    android:textSize="15sp"
+                    android:textColor="#000000"
+                    android:textColorHint="#B0B0B0"
+                    android:gravity="top|start"
+                    android:background="@android:color/transparent"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:scrollbars="vertical"/>
+            </LinearLayout>
+
+            <!-- Submit Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSubmitNotes"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_primary_button"
+                android:layout_marginTop="35dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"/>
+
+</RelativeLayout>

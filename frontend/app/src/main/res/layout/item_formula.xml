@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardFormula"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_card"
+    android:padding="18dp"
+    android:layout_marginBottom="16dp">
+
+    <!-- Formula Name -->
+    <TextView
+        android:id="@+id/tvFormulaName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Newton's Second Law"
+        android:textSize="15sp"
+        android:textColor="#00897B"
+        android:textStyle="bold"/>
+
+    <!-- Copy Button -->
+    <ImageView
+        android:id="@+id/btnCopy"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignParentEnd="true"/>
+
+    <!-- Equation -->
+    <TextView
+        android:id="@+id/tvEquation"
+        android:layout_below="@id/tvFormulaName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F = ma"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tvFormulaDescription"
+        android:layout_below="@id/tvEquation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Force equals mass times acceleration"
+        android:textSize="13sp"
+        android:textColor="#666666"
+        android:layout_marginTop="6dp"/>
+
+</RelativeLayout>

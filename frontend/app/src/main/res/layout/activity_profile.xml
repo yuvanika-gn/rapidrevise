@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    tools:context=".ProfileActivity"
+    android:background="#F6F7F9">
+
+    <!-- Scroll Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Profile Image Section -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <!-- Profile Circle -->
+                <TextView
+                    android:id="@+id/tvProfileInitials"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/bg_profile_circle"
+                    android:gravity="center"
+                    android:text="AJ"
+                    android:textColor="@android:color/white"
+                    android:textSize="32sp"
+                    android:textStyle="bold"/>
+
+                <!-- Camera Icon -->
+                <ImageView
+                    android:id="@+id/btnChangePhoto"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@id/tvProfileInitials"
+                    android:layout_alignEnd="@id/tvProfileInitials"
+                    android:background="@drawable/bg_camera_circle"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_cam_svg"
+                    app:tint="@android:color/black"/>
+            </RelativeLayout>
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alex Johnson"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/tvProfileEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="alex.johnson@email.com"
+                android:textSize="15sp"
+                android:textColor="#7A7A7A"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Stats Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="24dp">
+
+                <!-- Streak -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_stat_card"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/subjectcount"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="7 🔥"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/subject"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Subjects"
+                        android:textColor="#7A7A7A"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+
+                <!-- Subjects -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_stat_card"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/documentscount"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="6"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/documents"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Documents"
+                        android:textColor="#7A7A7A"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+
+                <!-- Hours -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_stat_card"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/imagescount"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="18h"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/images"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Images"
+                        android:textColor="#7A7A7A"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Menu Items -->
+
+            <include layout="@layout/profile_menu_subjects"/>
+            <include layout="@layout/profile_menu_progress"/>
+            <include layout="@layout/profile_menu_history"/>
+            <include layout="@layout/profile_menu_settings"/>
+
+            <!-- Logout -->
+            <LinearLayout
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+
+                android:layout_marginTop="30dp"
+                android:padding="12dp"
+
+                android:background="@drawable/bg_logout_box">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_logout"
+                    app:tint="#E53935"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  Log Out"
+                    android:textColor="#E53935"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+
+        android:background="@drawable/floating_nav_bg"
+        android:elevation="10dp"
+
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+
+        app:itemIconSize="24dp"
+        app:itemGravity="center"
+
+        app:itemRippleColor="@android:color/transparent"
+        app:itemActiveIndicatorStyle="@null"/>
+
+</RelativeLayout>
